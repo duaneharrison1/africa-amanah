@@ -265,14 +265,8 @@ section {
   width: 620px;
   height: 620px;
   pointer-events: none;
-  background-image:
-    repeating-radial-gradient(circle at center,
-      rgba(54, 79, 107, 0.07) 0,
-      rgba(54, 79, 107, 0.07) 1px,
-      transparent 1px,
-      transparent 26px);
-  -webkit-mask-image: radial-gradient(circle at center, #000 60%, transparent 72%);
-  mask-image: radial-gradient(circle at center, #000 60%, transparent 72%);
+  background: url('/Background-Light.svg') no-repeat center center;
+  background-size: contain;
 }
 @media (max-width: 900px) { .focus-rings { display: none; } }
 
@@ -472,7 +466,7 @@ section {
 
 /* ---------- dark feature section + reusable rings ---------- */
 .section-dark {
-  background: var(--brand);
+  background: #203143;
   color: rgba(255, 255, 255, 0.88);
   position: relative;
   overflow: hidden;
@@ -484,17 +478,11 @@ section {
   position: absolute;
   pointer-events: none;
   z-index: 0;
-  background-image: repeating-radial-gradient(circle at center,
-    rgba(54, 79, 107, 0.10) 0, rgba(54, 79, 107, 0.10) 1.5px,
-    transparent 1.5px, transparent 30px);
-  -webkit-mask-image: radial-gradient(circle at center, #000 56%, transparent 72%);
-  mask-image: radial-gradient(circle at center, #000 56%, transparent 72%);
+  background: url('/Background-Light.svg') no-repeat center center;
+  background-size: contain;
 }
-.section-dark .rings {
-  background-image: repeating-radial-gradient(circle at center,
-    rgba(255, 255, 255, 0.09) 0, rgba(255, 255, 255, 0.09) 1.5px,
-    transparent 1.5px, transparent 30px);
-}
+/* original has no ring graphic on the dark sections */
+.section-dark .rings { display: none; }
 @media (max-width: 700px) { .rings { display: none; } }
 
 /* ---------- helpers ---------- */
