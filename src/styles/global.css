@@ -117,12 +117,16 @@ section {
   color: #fff;
   border: 1.5px solid var(--brand);
   border-radius: var(--pill);
-  padding: 15px 32px;
+  padding: 14px 26px;
   font-weight: 500;
   font-size: 1rem;
+  line-height: 1.1;
+  white-space: nowrap;
   cursor: pointer;
   transition: background 0.2s ease, color 0.2s ease;
 }
+/* keep the header CTA on one line; don't let the nav squeeze it */
+.site-header .btn { flex: none; }
 .btn:hover { background: #fff; color: var(--brand); }
 
 .btn-light {
