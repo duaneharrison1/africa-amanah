@@ -260,13 +260,10 @@ section {
 .focus-section { position: relative; overflow: hidden; }
 .focus-rings {
   position: absolute;
-  top: -120px;
-  right: -160px;
-  width: 620px;
-  height: 620px;
+  inset: 0;
   pointer-events: none;
-  background: url('/Background-Light.svg') no-repeat center center;
-  background-size: contain;
+  background: url('/Background-Light.svg') no-repeat right center;
+  background-size: auto 100%;
 }
 @media (max-width: 900px) { .focus-rings { display: none; } }
 
@@ -475,14 +472,20 @@ section {
 .section-dark p, .section-dark .lead { color: rgba(255, 255, 255, 0.88); }
 
 .rings {
-  position: absolute;
+  position: absolute !important;
+  top: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  width: auto !important;
+  height: auto !important;
   pointer-events: none;
   z-index: 0;
-  background: url('/Background-Light.svg') no-repeat center center;
-  background-size: contain;
+  background: url('/Background-Light.svg') no-repeat right center;
+  background-size: auto 100%;
 }
 /* original has no ring graphic on the dark sections */
-.section-dark .rings { display: none; }
+.section-dark .rings { display: none !important; }
 @media (max-width: 700px) { .rings { display: none; } }
 
 /* ---------- helpers ---------- */
