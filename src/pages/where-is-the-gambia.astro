@@ -3,21 +3,21 @@ import Base from '../layouts/Base.astro';
 import { ASSET } from '../data/site.js';
 ---
 <Base title="Where is the Gambia — Africa Amanah Foundation">
-  <section class="page-header">
-    <div class="container-narrow">
-      <h1>Where is the Gambia</h1>
+  <!-- Intro with ring graphic on the right -->
+  <section class="page-header" style="position:relative; overflow:hidden; padding-bottom:8px">
+    <span class="rings" style="top:-90px; right:-150px; width:620px; height:620px" aria-hidden="true"></span>
+    <div class="container" style="position:relative; z-index:1">
+      <h1 style="margin-bottom:28px">Where is the Gambia</h1>
+      <div class="stack" style="max-width:1000px">
+        <p><a href="https://www.britannica.com/place/The-Gambia" target="_blank" rel="noopener" style="color:var(--brand); text-decoration:underline">The Gambia</a> is a small, predominantly Muslim West African country situated on the Atlantic coast surrounded by the neighbouring country of Senegal. The peculiar shape and size of the country are the result of territorial compromises made during the 19th century by Great Britain, which controlled the lower Gambia River, and France, which ruled the neighbouring colony of Senegal.</p>
+        <p>The Gambia is Africa’s smallest nonisland country. It is also one of Africa’s most densely populated countries. A few towns are located upriver, but most Gambians live in rural villages. The major ethnic groups are similar to those in Senegal and consist of the majority Malinke and also include Wolof, Fulani (Fulbe), Diola (Jola), and Soninke peoples. The Gambian economy is heavily dependant on raising livestock for food (which requires large amounts of water) and the production and export of peanut (groundnut).</p>
+        <p class="source-note">Source: <a href="https://www.britannica.com/place/The-Gambia" target="_blank" rel="noopener">britannica.com/place/The-Gambia</a></p>
+      </div>
     </div>
   </section>
 
+  <!-- Map -->
   <section style="padding-top:24px">
-    <div class="container-narrow stack">
-      <p><a href="https://www.britannica.com/place/The-Gambia" target="_blank" rel="noopener" style="color:var(--brand);text-decoration:underline">The Gambia</a> is a small, predominantly Muslim West African country situated on the Atlantic coast surrounded by the neighbouring country of Senegal. The peculiar shape and size of the country are the result of territorial compromises made during the 19th century by Great Britain, which controlled the lower Gambia River, and France, which ruled the neighbouring colony of Senegal.</p>
-      <p>The Gambia is Africa’s smallest nonisland country. It is also one of Africa’s most densely populated countries. A few towns are located upriver, but most Gambians live in rural villages. The major ethnic groups are similar to those in Senegal and consist of the majority Malinke and also include Wolof, Fulani (Fulbe), Diola (Jola), and Soninke peoples. The Gambian economy is heavily dependant on raising livestock for food (which requires large amounts of water) and the production and export of peanut (groundnut).</p>
-      <p class="source-note">Source: <a href="https://www.britannica.com/place/The-Gambia" target="_blank" rel="noopener">britannica.com/place/The-Gambia</a></p>
-    </div>
-  </section>
-
-  <section style="padding-top:0">
     <div class="container">
       <iframe
         class="map-frame"
@@ -29,12 +29,23 @@ import { ASSET } from '../data/site.js';
     </div>
   </section>
 
-  <section class="section-soft">
-    <div class="container-narrow stack">
-      <h2 style="margin-bottom:12px">Challenges in the Gambia</h2>
-      <p>Gambians have experienced a step-change in rainfall totals since a severe drought in the 1970s, with some regions recording as much as a 30% reduction in rainfall totals. The impacts are wide ranging, and devastating.</p>
-      <p>“The reduction in rainfall affects their livelihoods… and increases poverty,” said Mr Jallow, explaining that rising poverty has negative consequences for the natural environment, creating a vicious cycle of environmental degradation. “Our national forests are in danger of people cutting trees for timber sales. People have to feed their families in the end,” said Mr Jallow. “And they have to have a source of income.”</p>
-      <img class="rounded" src={`${ASSET}/2025/07/4CF73A47-4666-40F2-8A58-FE65384E0F1E.png`} alt="The Gambia landscape" style="margin:12px 0" />
+  <!-- Challenges — dark slate section with photo + rings -->
+  <section class="section-dark">
+    <span class="rings" style="top:-80px; left:-150px; width:560px; height:560px" aria-hidden="true"></span>
+    <div class="container grid grid-2" style="align-items:center; position:relative; z-index:1">
+      <div class="stack">
+        <h2 style="margin-bottom:8px">Challenges in the Gambia</h2>
+        <p>Gambians have experienced a step-change in rainfall totals since a severe drought in the 1970s, with some regions recording as much as a 30% reduction in rainfall totals. The impacts are wide ranging, and devastating.</p>
+        <p>“The reduction in rainfall affects their livelihoods… and increases poverty,” said Mr Jallow, explaining that rising poverty has negative consequences for the natural environment, creating a vicious cycle of environmental degradation. “Our national forests are in danger of people cutting trees for timber sales. People have to feed their families in the end,” said Mr Jallow. “And they have to have a source of income.”</p>
+      </div>
+      <img class="rounded" src={`${ASSET}/2025/07/4CF73A47-4666-40F2-8A58-FE65384E0F1E.png`} alt="Schoolchildren in the Gambia" />
+    </div>
+  </section>
+
+  <!-- Closing quotes -->
+  <section style="position:relative; overflow:hidden">
+    <span class="rings" style="top:-60px; left:-150px; width:440px; height:440px" aria-hidden="true"></span>
+    <div class="container stack" style="position:relative; z-index:1; max-width:1000px">
       <p>“The Gambia is one of the most [climate] vulnerable countries in the world and one of the most vulnerable countries in mainland Africa; partly because we depend largely on agriculture,” said Bubacar Jallow, Deputy Permanent Secretary in the Ministry for Environment, Climate Change and Natural Resources.</p>
       <p>“70% of Gambians are directly or indirectly involved in agriculture, out of that 70%, 98% depend on rainfall as the primary source of their water and we have been seeing significant decreases in rainfall.”</p>
       <p class="source-note">Source: <a href="https://www.uncdf.org/article/8303/with-temperatures-rising-and-rainfall-decreasing-water-is-life-in-the-gambia" target="_blank" rel="noopener">uncdf.org</a></p>
