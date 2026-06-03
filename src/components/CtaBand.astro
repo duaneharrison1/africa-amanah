@@ -6,10 +6,10 @@ const {
   label = 'Join Campaigns',
 } = Astro.props;
 ---
-<section class="cta section-soft">
+<section class="cta">
   <div class="container">
     <h2>{heading}</h2>
     {text && <p class="lead center" style="margin-bottom:28px">{text}</p>}
-    <a href={donateUrl} target="_blank" rel="noopener" class="btn">{label}</a>
+    <a href={donateUrl} target="_blank" rel="noopener" class="btn btn-light">{label}</a>
   </div>
 </section>
