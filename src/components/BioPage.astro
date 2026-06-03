@@ -4,8 +4,9 @@ import { ASSET } from '../data/site.js';
 const { name, role, photo, intro = [], skills = [], experience = [] } = Astro.props;
 ---
 <Base title={`${name} — Africa Amanah Foundation`}>
-  <section class="page-header">
-    <div class="container">
+  <section class="page-header bio-hero">
+    <span class="rings" style="top:-80px;right:-120px;width:760px;height:760px" aria-hidden="true"></span>
+    <div class="container" style="position:relative;z-index:1">
       <div class="bio-header">
         <div class="bio-photo"><img src={photo} alt={name} /></div>
         <div>
@@ -17,13 +18,14 @@ const { name, role, photo, intro = [], skills = [], experience = [] } = Astro.pr
     </div>
   </section>
 
-  <section>
-    <div class="container">
-      <h2 style="margin-bottom:36px">Key Skills</h2>
-      <div class="grid grid-3">
+  <section class="section-dark">
+    <span class="rings" style="top:-60px;left:-180px;width:680px;height:680px" aria-hidden="true"></span>
+    <div class="container" style="position:relative;z-index:1">
+      <h2 class="center" style="margin-bottom:48px">Key Skills</h2>
+      <div class="grid grid-3 bio-skills">
         {skills.map((s) => (
-          <div class="skill-card">
-            {s.icon && <div class="skill-icon"><img src={`${ASSET}/${s.icon}`} alt="" /></div>}
+          <div class="bio-skill">
+            {s.icon && <div class="bio-skill-icon"><img src={`${ASSET}/${s.icon}`} alt="" /></div>}
             <h4>{s.title}</h4>
             <p>{s.text}</p>
           </div>
@@ -32,18 +34,69 @@ const { name, role, photo, intro = [], skills = [], experience = [] } = Astro.pr
     </div>
   </section>
 
-  <section class="section-soft">
+  <section>
     <div class="container">
-      <h2 style="margin-bottom:36px">Education &amp; Experience</h2>
-      <div class="grid grid-2">
-        {experience.map((e) => (
-          <div class="skill-card">
-            {e.icon && <div class="skill-icon"><img src={`${ASSET}/${e.icon}`} alt="" /></div>}
-            <h4>{e.title}</h4>
-            <p>{e.text}</p>
-          </div>
-        ))}
+      <div class="bio-exp">
+        <h2 class="bio-exp-title">Education &amp; Experience</h2>
+        <div class="bio-exp-list">
+          {experience.map((e) => (
+            <div class="bio-exp-item">
+              {e.icon && <div class="bio-exp-icon"><img src={`${ASSET}/${e.icon}`} alt="" /></div>}
+              <div class="bio-exp-body">
+                <h4>{e.title}</h4>
+                <p>{e.text}</p>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   </section>
 </Base>
+
+<style>
+  /* Key Skills — icon + heading + text on the dark slate background, no cards */
+  .bio-skills { gap: 48px 40px; align-items: start; }
+  .bio-skill h4 { color: #fff; margin-bottom: 12px; }
+  .bio-skill p { color: rgba(255, 255, 255, 0.85); font-size: 0.98rem; }
+  .bio-skill-icon {
+    width: 72px;
+    height: 72px;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 22px;
+  }
+  .bio-skill-icon img { width: 38px; height: 38px; }
+
+  /* Education & Experience — heading left, list right */
+  .bio-exp {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 48px;
+    align-items: start;
+  }
+  .bio-exp-title { margin: 0; }
+  .bio-exp-list { display: flex; flex-direction: column; gap: 36px; }
+  .bio-exp-item { display: grid; grid-template-columns: 56px 1fr; gap: 22px; align-items: start; }
+  .bio-exp-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 14px;
+    background: var(--bg-soft);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .bio-exp-icon img { width: 100%; height: 100%; object-fit: cover; }
+  .bio-exp-body h4 { margin-bottom: 8px; }
+  .bio-exp-body p { font-size: 1rem; margin: 0; }
+
+  @media (max-width: 900px) {
+    .bio-skills { gap: 40px 32px; }
+    .bio-exp { grid-template-columns: 1fr; gap: 32px; }
+  }
+</style>

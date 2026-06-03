@@ -7,47 +7,13 @@ import { contact, ASSET } from '../data/site.js';
 const WEB3FORMS_KEY = 'YOUR_WEB3FORMS_ACCESS_KEY';
 ---
 <Base title="Contact Us — Africa Amanah Foundation">
-  <section class="page-header">
-    <div class="container-narrow center">
-      <h1>Contact Us</h1>
-      <p class="eyebrow mx-auto">Have a question, want to volunteer, or interested in partnering with us? We’d love to hear from you! Reach out by email or phone, and our team will get back to you as soon as possible.</p>
-    </div>
-  </section>
-
-  <section style="padding-top:32px">
-    <div class="container contact-grid">
+  <section class="page-header" style="position:relative; overflow:hidden">
+    <span class="rings" style="top:20px; right:-160px; width:560px; height:560px" aria-hidden="true"></span>
+    <span class="rings" style="bottom:-200px; right:120px; width:440px; height:440px" aria-hidden="true"></span>
+    <div class="container contact-grid" style="position:relative; z-index:1; align-items:center">
       <div>
-        <h3 style="margin-bottom:6px">Send us your message</h3>
-        <p style="margin-bottom:24px">We will get back to you within 2 working days.</p>
-        <form action="https://api.web3forms.com/submit" method="POST" id="contactForm">
-          <input type="hidden" name="access_key" value={WEB3FORMS_KEY} />
-          <input type="hidden" name="subject" value="New message from africaamanah.com" />
-          <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off" />
-          <div class="grid grid-2" style="gap:18px">
-            <div class="field">
-              <label for="first">First Name</label>
-              <input id="first" name="First Name" type="text" required />
-            </div>
-            <div class="field">
-              <label for="last">Last Name</label>
-              <input id="last" name="Last Name" type="text" required />
-            </div>
-          </div>
-          <div class="field">
-            <label for="email">Email</label>
-            <input id="email" name="email" type="email" required />
-          </div>
-          <div class="field">
-            <label for="message">Message</label>
-            <textarea id="message" name="message" required></textarea>
-          </div>
-          <button type="submit" class="btn">Send</button>
-          <p id="formStatus" style="margin-top:14px;font-size:0.95rem"></p>
-        </form>
-      </div>
-
-      <div>
-        <h3 style="margin-bottom:18px">Reach out to join or collaborate</h3>
+        <h1 style="margin-bottom:18px">Contact Us</h1>
+        <p class="eyebrow" style="margin-bottom:28px">Have a question, want to volunteer, or interested in partnering with us? We’d love to hear from you! Reach out by email or phone, and our team will get back to you as soon as possible.</p>
         <div class="contact-line">
           <img src={`${ASSET}/2025/07/ic_round-phone.png`} alt="" />
           <span>{contact.phone}</span>
@@ -56,17 +22,77 @@ const WEB3FORMS_KEY = 'YOUR_WEB3FORMS_ACCESS_KEY';
           <img src={`${ASSET}/2025/07/material-symbols_mail-rounded.png`} alt="" />
           <span>{contact.email}</span>
         </div>
-        <img class="rounded" style="margin-top:28px" src={`${ASSET}/2025/07/roman-nguyen-lPPkJ4NfQtQ-unsplash-removebg-preview-1.png`} alt="Volunteer with Africa Amanah Foundation" />
+      </div>
+
+      <div class="form-card">
+        <h3 style="margin-bottom:6px">Send us your message</h3>
+        <p style="margin-bottom:24px">We will get back to you within 2 working days.</p>
+        <form action="https://api.web3forms.com/submit" method="POST" id="contactForm">
+          <input type="hidden" name="access_key" value={WEB3FORMS_KEY} />
+          <input type="hidden" name="subject" value="New message from africaamanah.com" />
+          <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off" />
+          <div class="grid grid-2" style="gap:18px">
+            <div class="field">
+              <input id="first" name="First Name" type="text" placeholder="Name" required />
+            </div>
+            <div class="field">
+              <input id="last" name="Last Name" type="text" placeholder="Last Name" required />
+            </div>
+          </div>
+          <div class="field">
+            <input id="email" name="email" type="email" placeholder="Email" required />
+          </div>
+          <div class="field">
+            <textarea id="message" name="message" placeholder="Message" required></textarea>
+          </div>
+          <button type="submit" class="btn">Send</button>
+          <p id="formStatus" style="margin-top:14px;font-size:0.95rem"></p>
+        </form>
       </div>
     </div>
   </section>
 
-  <section class="section-soft">
-    <div class="container-narrow center">
-      <h2 style="margin-bottom:18px">Join Us To Create Lasting Change</h2>
-      <p class="eyebrow mx-auto">Whether you want to <strong>volunteer</strong> or <strong>partner with us</strong>, your energy and support help us uplift lives, run new campaigns, and make a real impact across The Gambia. We welcome passionate individuals, organizations, and companies ready to create positive change.</p>
+  <section>
+    <div class="container">
+      <div class="join-card">
+        <div class="grid grid-2" style="align-items:center; gap:40px">
+          <div>
+            <h2 style="margin-bottom:18px">Join Us To Create Lasting Change</h2>
+            <p style="margin-bottom:24px">Whether you want to <strong>volunteer</strong> or <strong>partner with us</strong>, your energy and support help us uplift lives, run new campaigns, and make a real impact across The Gambia. We welcome passionate individuals, organizations, and companies ready to create positive change.</p>
+            <p style="margin-bottom:18px">Reach out to join or collaborate:</p>
+            <div class="contact-line">
+              <img src={`${ASSET}/2025/07/ic_round-phone.png`} alt="" />
+              <span>{contact.phone}</span>
+            </div>
+            <div class="contact-line">
+              <img src={`${ASSET}/2025/07/material-symbols_mail-rounded.png`} alt="" />
+              <span>{contact.email}</span>
+            </div>
+          </div>
+          <img src={`${ASSET}/2025/07/roman-nguyen-lPPkJ4NfQtQ-unsplash-removebg-preview-1.png`} alt="Volunteer with Africa Amanah Foundation" />
+        </div>
+      </div>
     </div>
   </section>
+
+  <style>
+    .form-card {
+      background: #fff;
+      border-radius: var(--radius-lg);
+      box-shadow: 0 24px 60px rgba(54, 79, 107, 0.14);
+      padding: 40px;
+    }
+    .join-card {
+      background: var(--bg-soft);
+      border-radius: var(--radius-lg);
+      padding: 48px;
+    }
+    .join-card img { width: 100%; }
+    @media (max-width: 760px) {
+      .form-card { padding: 28px; }
+      .join-card { padding: 32px; }
+    }
+  </style>
 
   <script>
     const form = document.getElementById('contactForm');

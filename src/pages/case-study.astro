@@ -2,31 +2,116 @@
 import Base from '../layouts/Base.astro';
 import { ASSET } from '../data/site.js';
 
-const reports = [
-  { href: '/charity-report-2025/', title: 'Charity Report 2025', text: 'Baseng Foundation Ramadan outreach — food and cash aid to over 500 households across 3 provinces in the Gambia.', img: 'https://africaamanah.com/wp-content/uploads/2025/07/C92EAEEB-6766-431C-B15C-025053F3A984.png' },
-  { href: '/charity-report-2024/', title: 'Charity Report 2024', text: 'Kunkujang Keitaya outreach — supporting 14 vulnerable households with essential food items and basic supplies.', img: 'https://africaamanah.com/wp-content/uploads/2025/07/Photo-26-03-2025-2-54-46-AM.png' },
+// Both featured panels on the original Case Study page display the same set of
+// figures (the 2024 block reuses the 2025 figures on the live site).
+const figures = [
+  { icon: '2025/07/tdesign_rice-filled.svg', num: '$ 1,100 USD', label: 'Donated to Widows and Orphans' },
+  { icon: '2025/06/lucide-lab_onion.svg', num: '200', label: 'Bags of rice' },
+  { icon: '2025/06/Frame-1707483721.svg', num: '70', label: 'Bags of biscuits' },
+  { icon: '2025/06/mdi_spoon-sugar.svg', num: '100', label: 'Bags of sugar' },
+];
+
+const features = [
+  {
+    title: 'Featured Outreach: Baseng Foundation 2025',
+    text: 'On April 2025, we reached 3 provinces across North and South Bank.',
+    href: '/charity-report-2025/',
+    figures,
+  },
+  {
+    title: 'Charity Outreach Report Kunkujang Keitaya 2024',
+    text: 'On 29th December 2024, Africa Amanah Foundation carried out a charity outreach in the Kunkujang Keitaya community, supporting 14 vulnerable households with essential food items and basic supplies.',
+    href: '/charity-report-2024/',
+    figures,
+  },
 ];
 ---
 <Base title="Case Study — Africa Amanah Foundation">
-  <section class="page-header">
-    <div class="container-narrow center">
-      <h1>Case Study</h1>
-      <p class="eyebrow mx-auto">A look at our recent charity outreach campaigns and the impact they’ve made on the ground.</p>
-    </div>
-  </section>
-
-  <section style="padding-top:32px">
-    <div class="container">
-      <div class="grid grid-2">
-        {reports.map((r) => (
-          <a class="video-card" href={r.href}>
-            <div class="frame"><img src={r.img} alt={r.title} /></div>
-            <h3 style="margin:18px 0 8px">{r.title}</h3>
-            <p>{r.text}</p>
-            <p style="margin-top:14px"><span class="btn">Read report</span></p>
-          </a>
-        ))}
-      </div>
+  <section class="case-section">
+    <div class="container case-stack">
+      {features.map((f) => (
+        <div class="case-panel">
+          <span class="rings" style="top:-30px;left:-150px;width:560px;height:560px" aria-hidden="true"></span>
+          <div class="case-panel-grid">
+            <div class="case-panel-left">
+              <h2>{f.title}</h2>
+              <p class="case-panel-text">{f.text}</p>
+              <a class="btn btn-light" href={f.href}>See Campaigns</a>
+            </div>
+            <div class="case-figs">
+              {f.figures.map((s) => (
+                <div class="case-fig">
+                  <div class="case-fig-top">
+                    <span class="case-fig-icon"><img src={`${ASSET}/${s.icon}`} alt="" /></span>
+                    <span class="case-fig-num">{s.num}</span>
+                  </div>
+                  <div class="case-fig-label">{s.label}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      ))}
     </div>
   </section>
 </Base>
+
+<style>
+  .case-section { padding-top: 64px; padding-bottom: 80px; }
+  .case-stack { display: flex; flex-direction: column; gap: 48px; }
+
+  .case-panel {
+    position: relative;
+    overflow: hidden;
+    background: var(--brand);
+    border-radius: var(--radius-lg);
+    padding: 64px 56px;
+  }
+  /* white rings on the dark panel */
+  .case-panel .rings {
+    background-image: repeating-radial-gradient(circle at center,
+      rgba(255, 255, 255, 0.09) 0, rgba(255, 255, 255, 0.09) 1.5px,
+      transparent 1.5px, transparent 30px);
+  }
+
+  .case-panel-grid {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1fr 1.05fr;
+    gap: 56px;
+    align-items: center;
+  }
+  .case-panel-left h2 { color: #fff; font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 18px; }
+  .case-panel-text { color: rgba(255, 255, 255, 0.88); margin-bottom: 28px; max-width: 460px; }
+
+  .case-figs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+  .case-fig {
+    background: rgba(255, 255, 255, 0.07);
+    border-radius: var(--radius);
+    padding: 22px 24px;
+    min-height: 150px;
+  }
+  .case-fig-top { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
+  .case-fig-icon {
+    width: 40px; height: 40px; border-radius: 50%;
+    background: var(--yellow);
+    display: flex; align-items: center; justify-content: center; flex: none;
+  }
+  .case-fig-icon img { width: 22px; height: 22px; }
+  .case-fig-num { font-size: 1.15rem; font-weight: 700; color: #fff; }
+  .case-fig-label { color: rgba(255, 255, 255, 0.82); font-size: 0.98rem; }
+
+  @media (max-width: 900px) {
+    .case-panel { padding: 44px 28px; }
+    .case-panel-grid { grid-template-columns: 1fr; gap: 36px; }
+  }
+  @media (max-width: 600px) {
+    .case-figs { grid-template-columns: 1fr 1fr; gap: 16px; }
+    .case-fig { padding: 18px; min-height: 0; }
+  }
+</style>

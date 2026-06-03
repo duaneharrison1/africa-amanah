@@ -1,7 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
-import CtaBand from '../components/CtaBand.astro';
-import { ASSET } from '../data/site.js';
+import { ASSET, donateUrl } from '../data/site.js';
 
 const values = [
   { icon: 'Wells.svg', title: 'Poverty Alleviation', text: 'Providing essential food, clothing, and healthcare support to the underprivileged' },
@@ -11,16 +10,11 @@ const values = [
 ];
 ---
 <Base title="Our Mission — Africa Amanah Foundation">
-  <section class="page-header">
-    <div class="container-narrow center">
-      <h1>Our Mission</h1>
-      <p class="eyebrow mx-auto">At Africa Amanah Foundation (AAF), every act of kindness is charity. We believe that together, we can create lasting change. Our work is rooted in compassion, solidarity, and the belief that every individual deserves access to basic necessities and opportunities to thrive.</p>
-    </div>
-  </section>
-
-  <section style="padding-top:32px">
-    <div class="container">
-      <img class="hero-image" src={`${ASSET}/2025/07/2F7442A1-F036-46E6-A2F2-8B85C117CCD1-1.png`} alt="Africa Amanah Foundation outreach" />
+  <section class="page-header" style="position:relative; overflow:hidden">
+    <span class="rings" style="top:-90px; right:-150px; width:620px; height:620px" aria-hidden="true"></span>
+    <div class="container" style="position:relative; z-index:1">
+      <h1 style="margin-bottom:24px">Our Mission</h1>
+      <p class="eyebrow" style="max-width:1000px">At Africa Amanah Foundation (AAF), every act of kindness is charity. We believe that together, we can create lasting change. Our work is rooted in compassion, solidarity, and the belief that every individual deserves access to basic necessities and opportunities to thrive.</p>
     </div>
   </section>
 
@@ -39,5 +33,10 @@ const values = [
     </div>
   </section>
 
-  <CtaBand heading="We are committed to being a force for good, one act of kindness at a time" text="" />
+  <section class="cta section-dark center">
+    <div class="container">
+      <h2>We are committed to being a force for good, one act of kindness at a time</h2>
+      <a href={donateUrl} target="_blank" rel="noopener" class="btn" style="margin-top:28px">Join Campaigns</a>
+    </div>
+  </section>
 </Base>

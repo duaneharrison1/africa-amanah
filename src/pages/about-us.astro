@@ -1,6 +1,5 @@
 ---
 import Base from '../layouts/Base.astro';
-import CtaBand from '../components/CtaBand.astro';
 import { ASSET, team } from '../data/site.js';
 
 const goals = [
@@ -11,22 +10,40 @@ const goals = [
 ---
 <Base title="About Us — Africa Amanah Foundation">
   <section class="page-header">
-    <div class="container-narrow center">
-      <h1>About Us</h1>
-      <p class="lead mx-auto" style="margin-bottom:8px"><strong style="color:var(--brand)">Africa Amanah Foundation (AAF)</strong> is a charity based in Kanifing, the Gambia</p>
-      <p class="eyebrow mx-auto">Founded in 2020 by a group of passionate Africans dedicated to supporting the poor and needy in the Gambia and across Africa.</p>
+    <div class="container">
+      <h1 style="margin-bottom:28px">About Us</h1>
+      <div class="video-card">
+        <div class="frame">
+          <iframe
+            src="https://www.youtube.com/embed/tm1uqTBOxdI"
+            title="About Africa Amanah Foundation"
+            loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
     </div>
   </section>
 
-  <section style="padding-top:32px">
-    <div class="container grid grid-2" style="max-width:760px">
-      <div class="metric center"><div class="metric-num">4+</div><div class="metric-label">Dedicated years</div></div>
-      <div class="metric center"><div class="metric-num">24+</div><div class="metric-label">Villages covered</div></div>
-    </div>
-  </section>
-
-  <section>
+  <section style="padding-top:40px">
     <div class="container grid grid-2" style="align-items:center">
+      <div>
+        <h2 style="margin-bottom:16px"><strong style="color:var(--brand)">Africa Amanah Foundation (AAF)</strong> is a charity based in Kanifing, the Gambia</h2>
+        <p class="eyebrow">Founded in 2020 by a group of passionate Africans dedicated to supporting the poor and needy in the Gambia and across Africa.</p>
+      </div>
+      <div class="stack" style="max-width:320px; margin-left:auto">
+        <div class="metric"><div class="metric-num">4+</div><div class="metric-label">Dedicated years</div></div>
+        <hr style="border:0; border-top:1px solid var(--line); margin:20px 0" />
+        <div class="metric"><div class="metric-num">24+</div><div class="metric-label">Villages covered</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-dark">
+    <span class="rings" style="top:-90px; left:-150px; width:560px; height:560px" aria-hidden="true"></span>
+    <div class="container grid grid-2" style="align-items:center; position:relative; z-index:1">
       <div>
         <h2 style="margin-bottom:16px">Our Story</h2>
         <p>We operate as a non-profit relief organization, focused on humanitarian aid, education, and community development. From distributing food to impoverished households to empowering youth through education, Africa Amanah Foundation (AAF) strives to be a lifeline for those most in need.</p>
@@ -37,7 +54,7 @@ const goals = [
 
   <section class="section-soft">
     <div class="container">
-      <h2 style="margin-bottom:40px">Our Goals</h2>
+      <h2 class="center" style="margin-bottom:48px">Our Goals</h2>
       <div class="grid grid-3">
         {goals.map((g) => (
           <div class="skill-card">
@@ -50,9 +67,11 @@ const goals = [
   </section>
 
   <section>
+    <div class="container grid grid-2" style="align-items:center; margin-bottom:40px">
+      <h2 style="margin:0">Our Team</h2>
+      <p class="lead" style="margin:0">Our team includes an Executive board based in London and the Gambia who work with the International Director in Hong Kong. It is truly a global effort to organise outreach programs, build partnerships, raise awareness and work tirelessly on the ground to uplift lives and restore dignity.</p>
+    </div>
     <div class="container">
-      <h2 style="margin-bottom:16px">Our Team</h2>
-      <p class="lead" style="margin-bottom:40px">Our team includes an Executive board based in London and the Gambia who work with the International Director in Hong Kong. It is truly a global effort to organise outreach programs, build partnerships, raise awareness and work tirelessly on the ground to uplift lives and restore dignity.</p>
       <div class="grid grid-4">
         {team.map((m) => (
           <a class="team-card" href={m.href}>
@@ -66,5 +85,10 @@ const goals = [
     </div>
   </section>
 
-  <CtaBand heading="The charity that is a trifle to us can be precious to others" text="" />
+  <section class="cta section-dark center">
+    <span class="rings" style="top:-80px; right:-150px; width:560px; height:560px" aria-hidden="true"></span>
+    <div class="container" style="position:relative; z-index:1">
+      <h2>The charity that is a trifle to us can be precious to others</h2>
+    </div>
+  </section>
 </Base>

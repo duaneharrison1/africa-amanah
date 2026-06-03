@@ -1,7 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 
-// Gallery images pulled from the existing media library (placeholders).
+// Gallery images pulled from the media library.
 const photos = [
   'https://africaamanah.com/wp-content/uploads/2025/07/Photo-26-03-2025-2-54-46-AM.png',
   'https://africaamanah.com/wp-content/uploads/2025/07/C92EAEEB-6766-431C-B15C-025053F3A984.png',
@@ -9,13 +9,16 @@ const photos = [
   'https://africaamanah.com/wp-content/uploads/2025/07/506541FA-7932-4751-AEF4-4E553AB6554A.png',
   'https://africaamanah.com/wp-content/uploads/2025/07/868B3D25-A674-4DB5-9CF0-F2062075E766.png',
   'https://africaamanah.com/wp-content/uploads/2025/07/4CF73A47-4666-40F2-8A58-FE65384E0F1E-1.png',
+  'https://africaamanah.com/wp-content/uploads/2025/07/2F7442A1-F036-46E6-A2F2-8B85C117CCD1-1-1.png',
+  'https://africaamanah.com/wp-content/uploads/2025/07/IMG_3864.png',
+  'https://africaamanah.com/wp-content/uploads/2025/07/IMG_3863.png',
 ];
 ---
 <Base title="Gallery — Africa Amanah Foundation">
   <section class="page-header">
-    <div class="container-narrow center">
-      <h1>Gallery</h1>
-      <p class="eyebrow mx-auto">See the impact we’re making across The Gambia—one smile, one project, and one community at a time.</p>
+    <div class="container grid grid-2" style="align-items:center">
+      <h1 style="margin:0">Gallery</h1>
+      <p class="eyebrow" style="margin:0">See the impact we’re making across The Gambia—one smile, one project, and one community at a time.</p>
     </div>
   </section>
 
