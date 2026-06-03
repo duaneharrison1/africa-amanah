@@ -1,0 +1,100 @@
+---
+import Base from '../layouts/Base.astro';
+import { contact, ASSET } from '../data/site.js';
+
+// Free contact-form service (Web3Forms). Create a free key at https://web3forms.com
+// and paste it below — submissions are emailed straight to the charity inbox.
+const WEB3FORMS_KEY = 'YOUR_WEB3FORMS_ACCESS_KEY';
+---
+<Base title="Contact Us — Africa Amanah Foundation">
+  <section class="page-header">
+    <div class="container-narrow center">
+      <h1>Contact Us</h1>
+      <p class="eyebrow mx-auto">Have a question, want to volunteer, or interested in partnering with us? We’d love to hear from you! Reach out by email or phone, and our team will get back to you as soon as possible.</p>
+    </div>
+  </section>
+
+  <section style="padding-top:32px">
+    <div class="container contact-grid">
+      <div>
+        <h3 style="margin-bottom:6px">Send us your message</h3>
+        <p style="margin-bottom:24px">We will get back to you within 2 working days.</p>
+        <form action="https://api.web3forms.com/submit" method="POST" id="contactForm">
+          <input type="hidden" name="access_key" value={WEB3FORMS_KEY} />
+          <input type="hidden" name="subject" value="New message from africaamanah.com" />
+          <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off" />
+          <div class="grid grid-2" style="gap:18px">
+            <div class="field">
+              <label for="first">First Name</label>
+              <input id="first" name="First Name" type="text" required />
+            </div>
+            <div class="field">
+              <label for="last">Last Name</label>
+              <input id="last" name="Last Name" type="text" required />
+            </div>
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" required />
+          </div>
+          <div class="field">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" required></textarea>
+          </div>
+          <button type="submit" class="btn">Send</button>
+          <p id="formStatus" style="margin-top:14px;font-size:0.95rem"></p>
+        </form>
+      </div>
+
+      <div>
+        <h3 style="margin-bottom:18px">Reach out to join or collaborate</h3>
+        <div class="contact-line">
+          <img src={`${ASSET}/2025/07/ic_round-phone.png`} alt="" />
+          <span>{contact.phone}</span>
+        </div>
+        <div class="contact-line">
+          <img src={`${ASSET}/2025/07/material-symbols_mail-rounded.png`} alt="" />
+          <span>{contact.email}</span>
+        </div>
+        <img class="rounded" style="margin-top:28px" src={`${ASSET}/2025/07/roman-nguyen-lPPkJ4NfQtQ-unsplash-removebg-preview-1.png`} alt="Volunteer with Africa Amanah Foundation" />
+      </div>
+    </div>
+  </section>
+
+  <section class="section-soft">
+    <div class="container-narrow center">
+      <h2 style="margin-bottom:18px">Join Us To Create Lasting Change</h2>
+      <p class="eyebrow mx-auto">Whether you want to <strong>volunteer</strong> or <strong>partner with us</strong>, your energy and support help us uplift lives, run new campaigns, and make a real impact across The Gambia. We welcome passionate individuals, organizations, and companies ready to create positive change.</p>
+    </div>
+  </section>
+
+  <script>
+    const form = document.getElementById('contactForm');
+    const status = document.getElementById('formStatus');
+    form?.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      status.textContent = 'Sending…';
+      status.style.color = 'var(--body)';
+      const data = new FormData(form);
+      try {
+        const res = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          body: data,
+          headers: { Accept: 'application/json' },
+        });
+        const json = await res.json();
+        if (json.success) {
+          status.textContent = 'Thank you — your message has been sent.';
+          status.style.color = '#1a7f4b';
+          form.reset();
+        } else {
+          status.textContent = json.message || 'Something went wrong. Please email us directly.';
+          status.style.color = '#b23b3b';
+        }
+      } catch {
+        status.textContent = 'Network error. Please email us directly.';
+        status.style.color = '#b23b3b';
+      }
+    });
+  </script>
+</Base>

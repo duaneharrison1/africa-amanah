@@ -1,0 +1,47 @@
+---
+import { nav, ASSET } from '../data/site.js';
+---
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="logo" aria-label="Africa Amanah Foundation — home">
+      <img src={`${ASSET}/2025/06/Africa-Logo.png`} alt="Africa Amanah Foundation" />
+    </a>
+
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" id="navToggle">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="nav" id="primaryNav">
+      <ul class="nav-list">
+        {nav.map((item) => (
+          <li class="nav-item">
+            <a
+              href={item.href}
+              target={item.external ? '_blank' : undefined}
+              rel={item.external ? 'noopener' : undefined}
+            >
+              {item.label}{item.children && <span class="caret">▾</span>}
+            </a>
+            {item.children && (
+              <ul class="dropdown">
+                {item.children.map((c) => (
+                  <li><a href={c.href}>{c.label}</a></li>
+                ))}
+              </ul>
+            )}
+          </li>
+        ))}
+      </ul>
+      <a href="/contact-us/" class="btn">Contact Us</a>
+    </nav>
+  </div>
+</header>
+
+<script>
+  const toggle = document.getElementById('navToggle');
+  const navEl = document.getElementById('primaryNav');
+  toggle?.addEventListener('click', () => {
+    const open = navEl?.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+</script>

@@ -1,0 +1,84 @@
+---
+import Base from '../layouts/Base.astro';
+import CtaBand from '../components/CtaBand.astro';
+import { ASSET } from '../data/site.js';
+
+const stats = [
+  { icon: '2025/07/tdesign_rice-filled.svg', num: '$ 1,100 USD', label: 'Donated to Widows and Orphans' },
+  { icon: '2025/06/lucide-lab_onion.svg', num: '200', label: 'bags of rice' },
+  { icon: '2025/06/Frame-1707483721.svg', num: '70', label: 'bags of biscuits' },
+  { icon: '2025/06/mdi_spoon-sugar.svg', num: '100', label: 'bags of sugar' },
+];
+const highlights = [
+  { title: 'Community Engagement', text: 'Local volunteers and community members actively supported the distribution process.' },
+  { title: 'Impact', text: 'The initiative eased Ramadan hardship for vulnerable families with food and financial relief.' },
+  { title: 'Visibility', text: 'Branded T-shirts and banners helped raise awareness of the foundation’s efforts.' },
+];
+---
+<Base title="Charity Report 2025 — Africa Amanah Foundation">
+  <section class="page-header">
+    <div class="container-narrow">
+      <h1>Charity Report 2025</h1>
+      <p class="lead" style="margin-top:14px">From April 13–15, 2025, Baseng Foundation distributed food and cash aid to over 500 households across 3 provinces in the Gambia.</p>
+    </div>
+  </section>
+
+  <section style="padding-top:32px">
+    <div class="container">
+      <div class="stat-grid">
+        {stats.map((s) => (
+          <div class="stat-card">
+            <div class="stat-top">
+              <span class="stat-icon"><img src={`${ASSET}/${s.icon}`} alt="" /></span>
+              <span class="stat-num">{s.num}</span>
+            </div>
+            <div class="stat-label">{s.label}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container-narrow stack">
+      <h2 style="margin-bottom:6px">Objective</h2>
+      <p>To provide essential food commodities and cash donations to ease the hardships experienced by underprivileged families, especially the elderly, widows, and vulnerable groups during the holy month of Ramadan. The outreach aimed to support over 500 households across 3 provinces in the Gambia.</p>
+    </div>
+  </section>
+
+  <section class="section-soft">
+    <div class="container">
+      <h2 style="margin-bottom:36px">Outreach Highlights</h2>
+      <div class="grid grid-3">
+        {highlights.map((h) => (
+          <div class="skill-card"><h4>{h.title}</h4><p>{h.text}</p></div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container-narrow stack">
+      <h2 style="margin-bottom:6px">Challenges</h2>
+      <p>The main challenges faced during the initiative were:</p>
+      <p><strong>Transportation Difficulties:</strong> Limited vehicle availability and logistics coordination.<br /><strong>Rising Commodity Costs:</strong> The increasing prices of staple food items impacted budgeting.</p>
+      <p>Despite these hurdles, the leadership of charity distribution coordinator Fatim Badjie (Baseng Foundation) ensured smooth and effective execution.</p>
+
+      <h2 style="margin:28px 0 6px">Conclusion</h2>
+      <p>The Ramadan outreach was met with overwhelming gratitude and appreciation from the communities served. One elderly beneficiary expressed how the support brought “nourishment and hope” and reinforced community unity and compassion. The initiative significantly alleviated suffering during Ramadan and highlighted the impact of collective kindness.</p>
+
+      <h2 style="margin:28px 0 6px">Acknowledgments</h2>
+      <p>Sincere thanks to all donors, volunteers, and community members who made the program a success.</p>
+      <p style="font-weight:600;color:var(--ink)">Hadim Ceesay</p>
+    </div>
+  </section>
+
+  <section class="quote-band section-soft">
+    <div class="container-narrow">
+      <p style="font-size:1.4rem;color:var(--brand);margin-bottom:16px" dir="rtl" lang="ar">إِنَّ ٱلْمُصَّدِّقِينَ وَٱلْمُصَّدِّقَـٰتِ وَأَقْرَضُوا۟ ٱللَّهَ قَرْضًا حَسَنًۭا يُضَـٰعَفُ لَهُمْ وَلَهُمْ أَجْرٌۭ كَرِيمٌۭ</p>
+      <p class="lead mx-auto">“Indeed, the men who practice charity and the women who practice charity and [they who] have loaned Allāh a goodly loan – it will be multiplied for them, and they will have a noble reward.” — Holy Quran 57:18</p>
+    </div>
+  </section>
+
+  <CtaBand />
+</Base>

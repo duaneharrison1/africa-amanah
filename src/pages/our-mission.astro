@@ -1,0 +1,43 @@
+---
+import Base from '../layouts/Base.astro';
+import CtaBand from '../components/CtaBand.astro';
+import { ASSET } from '../data/site.js';
+
+const values = [
+  { icon: 'Wells.svg', title: 'Poverty Alleviation', text: 'Providing essential food, clothing, and healthcare support to the underprivileged' },
+  { icon: 'Loves.svg', title: 'Education Empowerment', text: 'Supporting access to education for children and young people across Gambia and beyond' },
+  { icon: 'Peoples.svg', title: 'Community Upliftment', text: 'Creating sustainable programs that build resilient communities.' },
+  { icon: 'Peoples.svg', title: 'Social Welfare', text: 'Offering recreational and development programs to improve lives and restore hope' },
+];
+---
+<Base title="Our Mission — Africa Amanah Foundation">
+  <section class="page-header">
+    <div class="container-narrow center">
+      <h1>Our Mission</h1>
+      <p class="eyebrow mx-auto">At Africa Amanah Foundation (AAF), every act of kindness is charity. We believe that together, we can create lasting change. Our work is rooted in compassion, solidarity, and the belief that every individual deserves access to basic necessities and opportunities to thrive.</p>
+    </div>
+  </section>
+
+  <section style="padding-top:32px">
+    <div class="container">
+      <img class="hero-image" src={`${ASSET}/2025/07/2F7442A1-F036-46E6-A2F2-8B85C117CCD1-1.png`} alt="Africa Amanah Foundation outreach" />
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2 class="center" style="margin-bottom:48px">What We Stand For</h2>
+      <div class="grid grid-4">
+        {values.map((v) => (
+          <div class="service-card">
+            <div class="icon-box"><img src={`${ASSET}/2025/06/${v.icon}`} alt="" /></div>
+            <h4>{v.title}</h4>
+            <p>{v.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <CtaBand heading="We are committed to being a force for good, one act of kindness at a time" text="" />
+</Base>

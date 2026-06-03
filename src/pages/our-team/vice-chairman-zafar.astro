@@ -1,0 +1,25 @@
+---
+import BioPage from '../../components/BioPage.astro';
+const intro = [
+  'Zafar Iqbal was born in Pakistan and migrated to the UK at the age of 7 with his family. At a young age he embarked on the memorisation of the Holy Qur’an and in his later years also completed a Masters in Islamic Studies.',
+  'He does not have a social media presence as he prefers a more feet-on-the-ground real-world lifestyle. His lifelong ambition is to assist poorer communities around the world by empowering them through education and Islam.',
+];
+const skills = [
+  { icon: '2025/07/Frame-3.svg', title: 'Charity Operations', text: 'Zafar has worked for various NGOs for the past 25 years. He brings a wealth of experience operating and executing projects in developing countries.' },
+  { icon: '2025/07/Frame-8.svg', title: 'Adaptive Leadership and Resilience', text: 'He has a problem-solving mindset, knowing how to use limited resources to achieve maximum impact on the ground.' },
+  { icon: '2025/07/Frame-8-1.svg', title: 'Financial Stewardship', text: 'Rigorous budgeting with transparent reporting to donors, knowing how to respond to emergencies while maintaining a long-term vision.' },
+];
+const experience = [
+  { icon: '2025/06/Frame-9.svg', title: 'Charity Operations', text: 'Zafar is currently the CEO of Mercy Welfare Trust, a registered charity in the UK (Charity Number 1147907) serving communities in India, Pakistan and Algeria. In his role as CEO he has been active in building 30 homes in South Punjab to support those made homeless after the floods of 2022.' },
+  { icon: '2025/06/Frame-8-3.svg', title: 'Quranic Teacher', text: 'He is actively engaged in Dawah (inviting others towards Islam) and also guiding and educating young Muslims towards the middle path. Zafar also teaches Quranic Arabic to ensure that the Holy Quran is understood in its native language and that its subtleties can be appreciated.' },
+  { icon: '2025/06/Frame-10.svg', title: 'Vice Chairman — Africa Amanah Foundation', text: 'Since 2025 Zafar serves as the Vice Chairman of Africa Amanah Foundation.' },
+];
+---
+<BioPage
+  name="Zafar Iqbal"
+  role="Vice Chairman"
+  photo="https://africaamanah.com/wp-content/uploads/2025/06/Frame-1707483754.png"
+  intro={intro}
+  skills={skills}
+  experience={experience}
+/>

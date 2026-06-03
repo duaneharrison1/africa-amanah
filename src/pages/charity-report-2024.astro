@@ -1,0 +1,90 @@
+---
+import Base from '../layouts/Base.astro';
+import CtaBand from '../components/CtaBand.astro';
+import { ASSET } from '../data/site.js';
+
+const stats = [
+  { icon: '2025/07/tdesign_rice-filled.svg', num: '14', label: 'bags of rice' },
+  { icon: '2025/06/lucide-lab_onion.svg', num: '19', label: 'bags of onions' },
+  { icon: '2025/06/Frame-1707483721.svg', num: '14', label: 'gallons of cooking oil' },
+  { icon: '2025/06/mdi_spoon-sugar.svg', num: '5', label: 'bags of sugar' },
+];
+const objectives = [
+  'To support vulnerable households with basic food supplies',
+  'To foster community engagement and strengthen social ties',
+  'To promote the Foundation’s mission of alleviating poverty and supporting the underprivileged',
+];
+const highlights = [
+  { title: 'Community Engagement', text: 'The outreach saw active participation from volunteers and community members, fostering a spirit of collaboration and support.' },
+  { title: 'Impact', text: 'Each household received essential food items to sustain their families, addressing immediate needs.' },
+  { title: 'Visibility', text: 'The event was conducted by a professional photographer with a branded banner, T-shirts and polo T-shirts enhancing the Foundation’s visibility.' },
+];
+---
+<Base title="Charity Report 2024 — Africa Amanah Foundation">
+  <section class="page-header">
+    <div class="container-narrow">
+      <h1>Charity Report 2024</h1>
+      <p class="lead" style="margin-top:14px">On 29th December 2024, Africa Amanah Foundation carried out a charity outreach in the Kunkujang Keitaya community, supporting 14 vulnerable households with essential food items and basic supplies.</p>
+    </div>
+  </section>
+
+  <section style="padding-top:32px">
+    <div class="container">
+      <div class="stat-grid">
+        {stats.map((s) => (
+          <div class="stat-card">
+            <div class="stat-top">
+              <span class="stat-icon"><img src={`${ASSET}/${s.icon}`} alt="" /></span>
+              <span class="stat-num">{s.num}</span>
+            </div>
+            <div class="stat-label">{s.label}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container-narrow">
+      <h2 style="margin-bottom:8px">Objective</h2>
+      {objectives.map((o, i) => (
+        <div class="num-item"><div class="num">{i + 1}</div><p>{o}</p></div>
+      ))}
+    </div>
+  </section>
+
+  <section class="section-soft">
+    <div class="container">
+      <h2 style="margin-bottom:36px">Outreach Highlights</h2>
+      <div class="grid grid-3">
+        {highlights.map((h) => (
+          <div class="skill-card"><h4>{h.title}</h4><p>{h.text}</p></div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container-narrow stack">
+      <h2 style="margin-bottom:6px">Challenges</h2>
+      <p>High transportation cost due to the location of the community.</p>
+      <p>We faced challenging transportation difficulties. The initial plan was to hire a mini-truck but that could not materialise due to the high price quoted, so we ended up hiring two sedan cars to transport the goods, and the volunteers followed by foot.</p>
+
+      <h2 style="margin:28px 0 6px">Conclusion</h2>
+      <p>The charity outreach in Kunkujang Keitaya was a success, with 14 households benefiting from essential supplies. Africa Amanah Foundation remains committed to its mission of empowering communities and improving lives.</p>
+      <p>The people of Kunkujang Keitaya community were so delighted and happy to receive the charity donations. They sent their heartfelt gratitude to Africa Amanah Foundation for coming to their rescue at this difficult time, and they pray that ALLAH (SWT) grant the wishes of everyone that shared a part of their wealth to help feed them and their families.</p>
+
+      <h2 style="margin:28px 0 6px">Acknowledgments</h2>
+      <p>We extend our heartfelt gratitude to all donors, volunteers and community members who contributed to the success of this outreach.</p>
+      <p style="font-weight:600;color:var(--ink)">Hadim Ceesay</p>
+    </div>
+  </section>
+
+  <section class="quote-band section-soft">
+    <div class="container-narrow">
+      <p class="lead mx-auto">“May Allah (SWT) grant the wishes of all who contributed to this noble cause.”<br />— Community Message</p>
+    </div>
+  </section>
+
+  <CtaBand />
+</Base>

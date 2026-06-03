@@ -1,0 +1,24 @@
+---
+import BioPage from '../../components/BioPage.astro';
+const intro = [
+  'Hadim Ceesay is the Project Manager of Africa Amanah Foundation, based on the ground in the Gambia and central to delivering the charity’s outreach programmes.',
+];
+const skills = [
+  { icon: '2025/07/Frame-3.svg', title: 'Deep Local Knowledge', text: 'Being on the ground in the Gambia, Hadim understands local customs and languages — he currently speaks Mandinka, Bambara, Wolof and Fula in addition to French and English. He is able to operate effectively by recognising tribal structures and gender dynamics that influence community access and trust.' },
+  { icon: '2025/07/Frame-8.svg', title: 'Teaching and Communication', text: 'Experienced in conveying complex concepts in an accessible manner, developed through years of teaching the Quran to students of various ages.' },
+  { icon: '2025/07/Frame-8-1.svg', title: 'Event Coordination', text: 'Served as the Assistant Financial Secretary for Nusrat commerce club, where he oversaw the organization of seminars and trade fairs, ensuring successful execution and engagement.' },
+];
+const experience = [
+  { icon: '2025/06/Frame-9.svg', title: 'Quranic Teacher', text: 'For the past six years, Hadim Ceesay has taught students of various ages, guiding them in memorizing and understanding the Quran. Through this role, he has instilled discipline, fostered a deep respect for religious texts, and developed strong teaching and interpersonal skills.' },
+  { icon: '2025/06/Frame-8-3.svg', title: 'Assistant Financial Secretary', text: 'As Assistant Financial Secretary of a university club, Hadim supported the financial operations of the organization. His responsibilities included budgeting, assisting with fundraising initiatives, and contributing to the planning and execution of educational seminars and trade fairs that encouraged knowledge sharing and professional growth.' },
+  { icon: '2025/06/Frame-10.svg', title: 'Project Manager — Africa Amanah Foundation', text: 'Operating a charity in Africa requires a unique blend of technical, cultural and adaptive skills due to the continent’s diverse and dynamic environment. Hadim has shown adept use of social media to build awareness and is skilled at building relationships with tribal elders and executing projects in challenging conditions that persist inside rural communities.' },
+];
+---
+<BioPage
+  name="Hadim Ceesay"
+  role="Project Manager"
+  photo="https://africaamanah.com/wp-content/uploads/2025/06/Frame-1707483754-1.png"
+  intro={intro}
+  skills={skills}
+  experience={experience}
+/>

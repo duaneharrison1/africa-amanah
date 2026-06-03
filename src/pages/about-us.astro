@@ -1,0 +1,70 @@
+---
+import Base from '../layouts/Base.astro';
+import CtaBand from '../components/CtaBand.astro';
+import { ASSET, team } from '../data/site.js';
+
+const goals = [
+  { icon: 'Frame-8.svg', text: 'Promoting education, especially for children and young people, through various initiatives and support to enhance learning, development, and access to educational opportunities' },
+  { icon: 'Frame-8-1.svg', text: 'Providing support and assistance to individuals suffering from water poverty, illness and hunger through a mix of direct aid and community led projects' },
+  { icon: 'Frame-8-2.svg', text: 'In the Gambia, contaminated water steals health, time and opportunity. Children miss school fetching water and families battle preventable diseases — we believe change flows from the ground up by bringing safe water directly to communities' },
+];
+---
+<Base title="About Us — Africa Amanah Foundation">
+  <section class="page-header">
+    <div class="container-narrow center">
+      <h1>About Us</h1>
+      <p class="lead mx-auto" style="margin-bottom:8px"><strong style="color:var(--brand)">Africa Amanah Foundation (AAF)</strong> is a charity based in Kanifing, the Gambia</p>
+      <p class="eyebrow mx-auto">Founded in 2020 by a group of passionate Africans dedicated to supporting the poor and needy in the Gambia and across Africa.</p>
+    </div>
+  </section>
+
+  <section style="padding-top:32px">
+    <div class="container grid grid-2" style="max-width:760px">
+      <div class="metric center"><div class="metric-num">4+</div><div class="metric-label">Dedicated years</div></div>
+      <div class="metric center"><div class="metric-num">24+</div><div class="metric-label">Villages covered</div></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container grid grid-2" style="align-items:center">
+      <div>
+        <h2 style="margin-bottom:16px">Our Story</h2>
+        <p>We operate as a non-profit relief organization, focused on humanitarian aid, education, and community development. From distributing food to impoverished households to empowering youth through education, Africa Amanah Foundation (AAF) strives to be a lifeline for those most in need.</p>
+      </div>
+      <img class="rounded" src={`${ASSET}/2025/06/IMG_3863.png`} alt="Africa Amanah Foundation outreach in the Gambia" />
+    </div>
+  </section>
+
+  <section class="section-soft">
+    <div class="container">
+      <h2 style="margin-bottom:40px">Our Goals</h2>
+      <div class="grid grid-3">
+        {goals.map((g) => (
+          <div class="skill-card">
+            <div class="skill-icon"><img src={`${ASSET}/2025/06/${g.icon}`} alt="" /></div>
+            <p>{g.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2 style="margin-bottom:16px">Our Team</h2>
+      <p class="lead" style="margin-bottom:40px">Our team includes an Executive board based in London and the Gambia who work with the International Director in Hong Kong. It is truly a global effort to organise outreach programs, build partnerships, raise awareness and work tirelessly on the ground to uplift lives and restore dignity.</p>
+      <div class="grid grid-4">
+        {team.map((m) => (
+          <a class="team-card" href={m.href}>
+            <div class="photo"><img src={m.photo} alt={m.name} /></div>
+            <h4>{m.name}</h4>
+            <div class="role">{m.role}</div>
+          </a>
+        ))}
+      </div>
+      <div class="mt-2"><a href="/our-team/" class="btn">Our Team</a></div>
+    </div>
+  </section>
+
+  <CtaBand heading="The charity that is a trifle to us can be precious to others" text="" />
+</Base>

@@ -1,0 +1,32 @@
+---
+import Base from '../layouts/Base.astro';
+import { ASSET } from '../data/site.js';
+
+const reports = [
+  { href: '/charity-report-2025/', title: 'Charity Report 2025', text: 'Baseng Foundation Ramadan outreach — food and cash aid to over 500 households across 3 provinces in the Gambia.', img: 'https://africaamanah.com/wp-content/uploads/2025/07/C92EAEEB-6766-431C-B15C-025053F3A984.png' },
+  { href: '/charity-report-2024/', title: 'Charity Report 2024', text: 'Kunkujang Keitaya outreach — supporting 14 vulnerable households with essential food items and basic supplies.', img: 'https://africaamanah.com/wp-content/uploads/2025/07/Photo-26-03-2025-2-54-46-AM.png' },
+];
+---
+<Base title="Case Study — Africa Amanah Foundation">
+  <section class="page-header">
+    <div class="container-narrow center">
+      <h1>Case Study</h1>
+      <p class="eyebrow mx-auto">A look at our recent charity outreach campaigns and the impact they’ve made on the ground.</p>
+    </div>
+  </section>
+
+  <section style="padding-top:32px">
+    <div class="container">
+      <div class="grid grid-2">
+        {reports.map((r) => (
+          <a class="video-card" href={r.href}>
+            <div class="frame"><img src={r.img} alt={r.title} /></div>
+            <h3 style="margin:18px 0 8px">{r.title}</h3>
+            <p>{r.text}</p>
+            <p style="margin-top:14px"><span class="btn">Read report</span></p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</Base>

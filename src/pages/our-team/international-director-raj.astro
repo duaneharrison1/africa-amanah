@@ -1,0 +1,24 @@
+---
+import BioPage from '../../components/BioPage.astro';
+const intro = [
+  'Raj Darbari-Linares serves as International Director of Africa Amanah Foundation, bringing over a decade of experience in financial services to the charity’s mission.',
+];
+const skills = [
+  { icon: '2025/07/Frame-3.svg', title: 'Financial Analysis', text: 'Raj has spent over a decade at leading financial organisations from Banks, to Asset managers and Insurers. Whilst studying for his CFA qualification he mastered financial statement analysis and budgetary planning.' },
+  { icon: '2025/07/Frame-8.svg', title: 'Project Management', text: 'Realising the need to have a structured framework for charitable projects that could borrow insights learned from financial services, he set about to hone his project management skills with a heavy focus on execution and scenario planning to make sure projects are delivered on time, within budget and anticipate problems before they occur.' },
+  { icon: '2025/07/Frame-8-1.svg', title: 'Technology For Productivity', text: 'As an early adopter of the first iPhone, a crypto trader since 2016, and now exploring AI, he has witnessed the rapid growth of technology and its power to connect and inform. He aims to leverage these skills to modernise charities and help provide African children with opportunities equal to those in the Western world.' },
+];
+const experience = [
+  { icon: '2025/06/Frame-9.svg', title: 'Bachelor’s Degree in Finance Accounting', text: 'He studied at the University of Nottingham, completing a Finance, Accounting and Management degree in 2010. He earned his CFA designation in 2013 and became an accredited PMI Project Manager in 2023.' },
+  { icon: '2025/06/Frame-8-3.svg', title: 'Financial Consultant', text: 'After working for AIA in Hong Kong in 2023, he felt the need to have a bigger impact and took the decision to leave the financial sector in 2023 to focus on charitable endeavours that have a grassroots impact.' },
+  { icon: '2025/06/Frame-10.svg', title: 'International Director', text: 'Serving as the International Director of Amanah Foundation, his role is to raise awareness of the charity, fundraise, and most importantly find corporate partners who want to utilise their corporate social responsibility budgets to have maximum impact in areas that need the most assistance.' },
+];
+---
+<BioPage
+  name="Raj Darbari-Linares"
+  role="International Director"
+  photo="https://africaamanah.com/wp-content/uploads/2025/06/telegram-cloud-photo-size-5-6332104648982381937-y.png"
+  intro={intro}
+  skills={skills}
+  experience={experience}
+/>

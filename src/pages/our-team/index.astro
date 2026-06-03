@@ -1,0 +1,26 @@
+---
+import Base from '../../layouts/Base.astro';
+import { team } from '../../data/site.js';
+---
+<Base title="Our Team — Africa Amanah Foundation">
+  <section class="page-header">
+    <div class="container">
+      <h2 style="margin-bottom:16px">Our Team</h2>
+      <p class="lead">Our team includes an Executive board based in London and the Gambia who work with the International Director in Hong Kong. It is truly a global effort to organise outreach programs, build partnerships, raise awareness and work tirelessly on the ground to uplift lives and restore dignity.</p>
+    </div>
+  </section>
+
+  <section style="padding-top:32px">
+    <div class="container">
+      <div class="grid grid-4">
+        {team.map((m) => (
+          <a class="team-card" href={m.href}>
+            <div class="photo"><img src={m.photo} alt={m.name} /></div>
+            <h4>{m.name}</h4>
+            <div class="role">{m.role}</div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</Base>

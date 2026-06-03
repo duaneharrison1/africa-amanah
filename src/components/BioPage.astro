@@ -1,0 +1,49 @@
+---
+import Base from '../layouts/Base.astro';
+import { ASSET } from '../data/site.js';
+const { name, role, photo, intro = [], skills = [], experience = [] } = Astro.props;
+---
+<Base title={`${name} — Africa Amanah Foundation`}>
+  <section class="page-header">
+    <div class="container">
+      <div class="bio-header">
+        <div class="bio-photo"><img src={photo} alt={name} /></div>
+        <div>
+          <h1>{name}</h1>
+          <div class="bio-role">{role}</div>
+          {intro.map((p) => <p class="lead" style="margin-bottom:14px">{p}</p>)}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2 style="margin-bottom:36px">Key Skills</h2>
+      <div class="grid grid-3">
+        {skills.map((s) => (
+          <div class="skill-card">
+            {s.icon && <div class="skill-icon"><img src={`${ASSET}/${s.icon}`} alt="" /></div>}
+            <h4>{s.title}</h4>
+            <p>{s.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section-soft">
+    <div class="container">
+      <h2 style="margin-bottom:36px">Education &amp; Experience</h2>
+      <div class="grid grid-2">
+        {experience.map((e) => (
+          <div class="skill-card">
+            {e.icon && <div class="skill-icon"><img src={`${ASSET}/${e.icon}`} alt="" /></div>}
+            <h4>{e.title}</h4>
+            <p>{e.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</Base>

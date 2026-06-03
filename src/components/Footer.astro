@@ -1,0 +1,44 @@
+---
+import { contact, ASSET } from '../data/site.js';
+---
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <a href="/" class="logo" aria-label="Africa Amanah Foundation — home">
+          <img src={`${ASSET}/2025/06/Group-2.svg`} alt="Africa Amanah Foundation" style="height:52px" />
+        </a>
+        <p class="tagline">Creating a better world, one cause at a time</p>
+        <div class="f-contact">
+          <img src={`${ASSET}/2025/07/ic_round-phone-1.png`} alt="" />
+          <span>{contact.phone}</span>
+        </div>
+        <div class="f-contact">
+          <img src={`${ASSET}/2025/07/material-symbols_mail-rounded-1.png`} alt="" />
+          <span>{contact.email}</span>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h6>Menu</h6>
+        <ul>
+          <li><a href="/about-us/">About Us</a></li>
+          <li><a href="/our-mission/">Our Mission</a></li>
+          <li><a href="/where-is-the-gambia/">Where is the Gambia</a></li>
+          <li><a href="/gallery/">Gallery</a></li>
+          <li><a href="/contact-us/">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h6>Campaigns</h6>
+        <ul>
+          <li><a href="/charity-report-2024/">Charity Report 2024</a></li>
+          <li><a href="/charity-report-2025/">Charity Report 2025</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">© {new Date().getFullYear()} Africa Amanah Foundation. All rights reserved.</div>
+  </div>
+</footer>

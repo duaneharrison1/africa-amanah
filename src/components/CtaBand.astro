@@ -1,0 +1,15 @@
+---
+import { donateUrl } from '../data/site.js';
+const {
+  heading = "Let’s Create Change Together",
+  text = 'We believe that every act of kindness counts. With your help, we can reach more communities, educate more children, and uplift more lives.',
+  label = 'Join Campaigns',
+} = Astro.props;
+---
+<section class="cta section-soft">
+  <div class="container">
+    <h2>{heading}</h2>
+    {text && <p class="lead center" style="margin-bottom:28px">{text}</p>}
+    <a href={donateUrl} target="_blank" rel="noopener" class="btn">{label}</a>
+  </div>
+</section>

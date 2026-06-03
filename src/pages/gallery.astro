@@ -1,0 +1,31 @@
+---
+import Base from '../layouts/Base.astro';
+
+// Gallery images pulled from the existing media library (placeholders).
+const photos = [
+  'https://africaamanah.com/wp-content/uploads/2025/07/Photo-26-03-2025-2-54-46-AM.png',
+  'https://africaamanah.com/wp-content/uploads/2025/07/C92EAEEB-6766-431C-B15C-025053F3A984.png',
+  'https://africaamanah.com/wp-content/uploads/2025/07/BC05E838-CF3C-45CB-B6E4-9A20F51B5EE6.png',
+  'https://africaamanah.com/wp-content/uploads/2025/07/506541FA-7932-4751-AEF4-4E553AB6554A.png',
+  'https://africaamanah.com/wp-content/uploads/2025/07/868B3D25-A674-4DB5-9CF0-F2062075E766.png',
+  'https://africaamanah.com/wp-content/uploads/2025/07/4CF73A47-4666-40F2-8A58-FE65384E0F1E-1.png',
+];
+---
+<Base title="Gallery — Africa Amanah Foundation">
+  <section class="page-header">
+    <div class="container-narrow center">
+      <h1>Gallery</h1>
+      <p class="eyebrow mx-auto">See the impact we’re making across The Gambia—one smile, one project, and one community at a time.</p>
+    </div>
+  </section>
+
+  <section style="padding-top:32px">
+    <div class="container">
+      <div class="gallery-grid">
+        {photos.map((p) => (
+          <div class="tile"><img src={p} alt="Africa Amanah Foundation outreach" loading="lazy" /></div>
+        ))}
+      </div>
+    </div>
+  </section>
+</Base>

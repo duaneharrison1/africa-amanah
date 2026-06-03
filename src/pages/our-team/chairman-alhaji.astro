@@ -1,0 +1,29 @@
+---
+import BioPage from '../../components/BioPage.astro';
+const intro = [
+  'Alhaji Dembo M. Badjie is a retired Gambian civil servant and diplomat. He entered the Gambian Government in 1970, taking a break to study Political Science and Economics at Rust College, followed by postgraduate studies at Glasgow Caledonian University.',
+  'A quintessential Public Servant and patriot who uses his diplomat skills to be a constant fighter for people’s power and dignity.',
+];
+const skills = [
+  { icon: '2025/07/Frame-8.svg', title: 'Diplomacy', text: 'In 2010, he was appointed as Gambian Ambassador to India (also serving Bangladesh and Myanmar), before being redeployed to the Gambian Embassy in the People’s Republic of China in 2016 after the resumption of diplomatic relations between China and the Gambia. In 2017, he retired from the Gambian civil service and wrote a book entitled “Outlook On Governance & Administration in the Gambia” and now focuses on serving the people through the Africa Amanah Foundation.' },
+  { icon: '2025/07/Frame-3.svg', title: 'Administration and Fundraising', text: 'Dembo Badjie is a seasoned administrator, diplomat, and dedicated civil servant who has devoted his life to nation-building, serving the Gambia from 1970 to the present. His career is distinguished by strategic insight and a strong grasp of international relations, particularly economic diplomacy, which helped secure vital funding for various development projects.' },
+  { icon: '2025/07/Frame-8-2.svg', title: 'Strategic Planning and Vision', text: 'His vision for a united and prosperous Gambia resonated in every initiative that he has undertaken, and his legacy will thus inspire future generations to embrace the values of service, integrity, and excellence.' },
+];
+const experience = [
+  { icon: '2025/06/Frame-8-4.svg', title: 'Civil Servant — the Gambia Civil Service', text: 'Dembo M. Badjie began his public service career in 1970, entering the Gambia Civil Service at a young age. After a brief hiatus, he re-entered in 1978, going on to serve in various government ministries, including Local Government and Education. These foundational years laid the groundwork for his future in diplomacy and public administration.' },
+  { icon: '2025/06/Frame-9-5.svg', title: 'Gambian Embassy in Brussels & Mission to the United Nations', text: 'Transitioned into the foreign service, representing the Gambia abroad. Served as First Secretary at the Gambian Embassy in Brussels, Belgium, and later at the Gambian Mission to the United Nations, where he engaged in international diplomacy and multilateral cooperation.' },
+  { icon: '2025/06/Frame-9-1.svg', title: 'Ambassador of the Gambia to Sierra Leone', text: 'Appointed as the Ambassador to Sierra Leone in 2004.' },
+  { icon: '2025/06/Frame-9-2.svg', title: 'Ambassador to India, Bangladesh, and Myanmar', text: 'In 2010, he was appointed as Gambian Ambassador to India, with concurrent accreditation to Bangladesh and Myanmar.' },
+  { icon: '2025/06/Frame-9-3.svg', title: 'Ambassador to the People’s Republic of China', text: 'Following the resumption of diplomatic relations between the Gambia and China in 2016, he was redeployed as Ambassador to China.' },
+  { icon: '2025/06/Frame-10.svg', title: 'Chairman — Africa Amanah Foundation', text: 'After retiring from the civil service in 2017, Dembo M. Badjie took on a leadership role in the nonprofit sector as Chairman of the Africa Amanah Foundation. Under his guidance, the foundation works to support communities through charitable initiatives and sustainable development efforts across Africa.' },
+  { icon: '2025/06/Frame-9-4.svg', title: 'Mentor & Public Service Leader', text: 'Beyond his formal roles, Dembo M. Badjie is widely regarded as a mentor and beacon of integrity. Known for his optimism, wisdom, and infectious love for life, he has left a lasting impact on countless aspiring diplomats and civil servants across generations.' },
+];
+---
+<BioPage
+  name="Alhaji Dembo M. Badjie"
+  role="Chairman"
+  photo="https://africaamanah.com/wp-content/uploads/2025/06/image-1.png"
+  intro={intro}
+  skills={skills}
+  experience={experience}
+/>

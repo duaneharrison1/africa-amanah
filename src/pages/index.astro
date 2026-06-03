@@ -1,0 +1,155 @@
+---
+import Base from '../layouts/Base.astro';
+import CtaBand from '../components/CtaBand.astro';
+import { ASSET, donateUrl } from '../data/site.js';
+
+const services = [
+  { icon: 'Wells.svg', title: 'Digging wells and ensuring access to clean water', text: 'We invest in digging wells and establishing reliable water sources to ensure that even the most remote communities have safe and consistent access to clean drinking water.' },
+  { icon: 'Loves.svg', title: 'Direct food aid into remote communities', text: 'Supporting the sick, distressed, and impoverished with physical sustenance.' },
+  { icon: 'Peoples.svg', title: 'Technology Partnerships with Corporates', text: 'Utilising corporate social responsibility budgets to have the largest impact using technology to finally escape the cycle of poverty.' },
+];
+
+const focus = [
+  'Dig wells to help remote communities gain access to clean, safe water for agricultural and domestic purposes',
+  'Providing Bags of Rice, Onions, Sugar, Cooking Oil and other basic necessities to facilitate immediate hunger relief',
+  'Currently in the Gambia state schools lack funding for IT spending and computer equipment. Classrooms have only 4-5 computers for a class of 35, with 5-6 children sharing a computer, we want every child in school to have direct access to a computer with Khan Academy pre-loaded',
+];
+
+const stats = [
+  { icon: '2025/07/tdesign_rice-filled.svg', num: '$ 1,100 USD', label: 'Donated to Widows and Orphans' },
+  { icon: '2025/06/lucide-lab_onion.svg', num: '200', label: 'Bags of rice' },
+  { icon: '2025/06/Frame-1707483721.svg', num: '70', label: 'Bags of biscuits' },
+  { icon: '2025/06/mdi_spoon-sugar.svg', num: '100', label: 'Bags of sugar' },
+];
+
+const help = [
+  { icon: 'Frame-1707483726.svg', title: 'Donate', text: 'Every contribution makes a real difference.', cta: 'Donate', href: donateUrl, external: true },
+  { icon: 'Frame-1707483726-1.svg', title: 'Volunteer', text: 'Be part of our next outreach.', cta: 'Be The Part Of Us', href: '/contact-us/' },
+  { icon: 'Frame-1707483726-2.svg', title: 'Partner With Us', text: 'Let’s work together to expand our impact.', cta: 'Join Us', href: '/contact-us/' },
+];
+---
+<Base title="Africa Amanah Foundation — Ending Poverty Across the Gambia">
+
+  <!-- Hero -->
+  <section class="page-header">
+    <div class="container">
+      <img class="hero-image" src={`${ASSET}/2025/07/jeff-ackley-YwDo_HwORXs-unsplash-scaled.jpg`} alt="Children carrying water across the Gambia" loading="eager" />
+    </div>
+  </section>
+
+  <section style="padding-top:40px">
+    <div class="container grid grid-2" style="align-items:center">
+      <h1>Together, We Can End Poverty and Uplift Lives Across the Gambia</h1>
+      <p class="eyebrow">Founded in 2020 by a group of like-minded Africans, our mission is to uplift vulnerable communities by eradicating poverty, promoting education through technology, and providing essential support to those in need across the Gambia.</p>
+    </div>
+  </section>
+
+  <!-- Our Mission + videos -->
+  <section>
+    <div class="container grid grid-2" style="align-items:start">
+      <div>
+        <h2 style="margin-bottom:20px">Our Mission</h2>
+        <p>To end poverty and hunger in Africa and empower the youth through education—because together, we can make a difference that truly counts.</p>
+        <p>We have run 5 successful campaigns so far, and with your help would like to reach 50! We partner with local charities on the ground such as Baseng foundation to further our outreach and impact.</p>
+      </div>
+      <div class="grid grid-2">
+        <div class="video-card">
+          <div class="frame">
+            <img src={`${ASSET}/2025/07/C92EAEEB-6766-431C-B15C-025053F3A984.png`} alt="Africa Amanah Charity Distribution 2024" />
+          </div>
+          <p class="caption">Africa Amanah Charity Distribution 2024</p>
+        </div>
+        <div class="video-card">
+          <div class="frame">
+            <video controls preload="metadata" poster={`${ASSET}/2025/07/C92EAEEB-6766-431C-B15C-025053F3A984.png`}>
+              <source src={`${ASSET}/2025/07/africa.mp4`} type="video/mp4" />
+            </video>
+          </div>
+          <p class="caption">Africa Amanah Charity distribution April 2025</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What We Do -->
+  <section class="section-soft">
+    <div class="container">
+      <h2 class="center" style="margin-bottom:48px">What We Do</h2>
+      <div class="grid grid-3">
+        {services.map((s) => (
+          <div class="service-card">
+            <div class="icon-box"><img src={`${ASSET}/2025/06/${s.icon}`} alt="" /></div>
+            <h4>{s.title}</h4>
+            <p>{s.text}</p>
+          </div>
+        ))}
+      </div>
+      <div class="center mt-2"><a href="/our-mission/" class="btn">View all services</a></div>
+    </div>
+  </section>
+
+  <!-- Project Focus -->
+  <section>
+    <div class="container grid grid-2" style="align-items:start">
+      <div>
+        <h2 style="margin-bottom:16px">Project Focus</h2>
+        <p class="lead">Africa Amanah Foundation (AAF) commit to working towards these initiatives.</p>
+      </div>
+      <div>
+        {focus.map((f, i) => (
+          <div class="num-item">
+            <div class="num">{i + 1}</div>
+            <p>{f}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Outreach + stats -->
+  <section class="section-soft">
+    <div class="container">
+      <h2 style="margin-bottom:14px">Featured Outreach: Baseng Foundation 2025</h2>
+      <p class="lead" style="margin-bottom:18px">On April 2025, we reached 3 provinces across North and South Bank.</p>
+      <p style="margin-bottom:36px"><a href="/charity-report-2025/" class="btn">See Campaigns</a></p>
+      <div class="stat-grid">
+        {stats.map((st) => (
+          <div class="stat-card">
+            <div class="stat-top">
+              <span class="stat-icon"><img src={`${ASSET}/${st.icon}`} alt="" /></span>
+              <span class="stat-num">{st.num}</span>
+            </div>
+            <div class="stat-label">{st.label}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- How You Can Help -->
+  <section>
+    <div class="container">
+      <h2 class="center" style="margin-bottom:10px">How You Can Help</h2>
+      <p class="eyebrow center mx-auto" style="margin-bottom:48px">Join us in our mission to create a better future for Africa</p>
+      <div class="grid grid-3">
+        {help.map((h) => (
+          <div class="service-card">
+            <div class="icon-box"><img src={`${ASSET}/2025/06/${h.icon}`} alt="" /></div>
+            <h4 style="margin-bottom:10px">{h.title}</h4>
+            <p style="margin-bottom:20px">{h.text}</p>
+            <a href={h.href} target={h.external ? '_blank' : undefined} rel={h.external ? 'noopener' : undefined} class="btn">{h.cta}</a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Gratitude quote -->
+  <section class="quote-band section-soft">
+    <div class="container">
+      <h2>The people of Kunkujang Keitaya send their heartfelt gratitude and prayers to all who shared their blessings</h2>
+    </div>
+  </section>
+
+  <CtaBand />
+</Base>
